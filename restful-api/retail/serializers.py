@@ -7,18 +7,22 @@ class AssetSerializer(serializers.ModelSerializer):
     """ Serializer to represent the Chain model """
     class Meta:
         model = Asset
-        fields = ("product", "image_url")
-
-
-class CategorySerializer(serializers.ModelSerializer):
-    """ Serializer to represent the Store model """
-    class Meta:
-        model = Category
-        fields = ("name", "description")
+        fields = ("id", "product", "image_url")
 
 
 class ProductSerializer(serializers.ModelSerializer):
     """ Serializer to represent the Employee model """
+    assets = AssetSerializer(many=True)
+
     class Meta:
         model = Product
-        fields = ("category", "name", "description", "price")
+        fields = ("id", "name", "description", "price", "assets")
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    """ Serializer to represent the Store model """
+    products = ProductSerializer(many=True)
+
+    class Meta:
+        model = Category
+        fields = ("id", "name", "description", "products")

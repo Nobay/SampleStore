@@ -26,14 +26,14 @@ class Category(models.Model):
 
 class Product(models.Model):
     """ Product model. Foreign key to Category"""
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category, related_name='products')
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     price = models.FloatField()
 
 
 class Asset(models.Model):
-    product = models.ForeignKey(Product)
+    product = models.ForeignKey(Product, related_name='assets')
     image_url = models.URLField(max_length=500)
 
 
