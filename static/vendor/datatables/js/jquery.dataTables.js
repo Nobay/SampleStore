@@ -1273,7 +1273,7 @@
 			 * Cache the header, body and footer as required, creating them if needed
 			 */
 			
-			// Work around for Webkit bug 83867 - store the caption-side before removing from doc
+			// Work around for Webkit bug 83867 - controllers the caption-side before removing from doc
 			var captions = $this.children('caption').each( function () {
 				this._captionSide = $this.css('caption-side');
 			} );
@@ -2972,7 +2972,7 @@
 			}
 		};
 	
-		// Read data from a cell and store into the data object
+		// Read data from a cell and controllers into the data object
 		var cellProcess = function ( cell ) {
 			if ( colIdx === undefined || colIdx === i ) {
 				col = columns[i];
@@ -3692,7 +3692,7 @@
 	 * create a layout grid (array) of rows x columns, which contains a reference
 	 * to the cell that that point in the grid (regardless of col/rowspan), such that
 	 * any column / row could be removed and the new grid constructed
-	 *  @param array {object} aLayout Array to store the calculated layout in
+	 *  @param array {object} aLayout Array to controllers the calculated layout in
 	 *  @param {node} nThead The header/footer element for the table
 	 *  @memberof DataTable#oApi
 	 */
@@ -6545,7 +6545,7 @@
 	
 	/**
 	 * Register a callback function. Easily allows a callback function to be added to
-	 * an array store of callback functions that can then all be called together.
+	 * an array controllers of callback functions that can then all be called together.
 	 *  @param {object} oSettings dataTables settings object
 	 *  @param {string} sStore Name of the array storage for the callbacks in oSettings
 	 *  @param {function} fn Function to be called back
@@ -6566,7 +6566,7 @@
 	
 	/**
 	 * Fire callback functions and trigger events. Note that the loop over the
-	 * callback array store is done backwards! Further note that you do not want to
+	 * callback array controllers is done backwards! Further note that you do not want to
 	 * fire off triggers in time sensitive applications (for example cell creation)
 	 * as its slow.
 	 *  @param {object} settings dataTables settings object
@@ -9371,7 +9371,7 @@
 	DataTable.version = "1.10.12";
 
 	/**
-	 * Private data store, containing all of the settings objects that are
+	 * Private data controllers, containing all of the settings objects that are
 	 * created for the tables on a given page.
 	 *
 	 * Note that the `DataTable.settings` object is aliased to
@@ -9539,7 +9539,7 @@
 	 * DataTables needs about each individual column.
 	 *
 	 * Note that this object is related to {@link DataTable.defaults.column}
-	 * but this one is the internal data store for DataTables's cache of columns.
+	 * but this one is the internal data controllers for DataTables's cache of columns.
 	 * It should NOT be manipulated outside of DataTables. Any configuration should
 	 * be done through the initialisation options.
 	 *  @namespace
@@ -9595,7 +9595,7 @@
 	
 		/**
 		 * Store for manual type assignment using the `column.type` option. This
-		 * is held in store so we can manipulate the column's `sType` property.
+		 * is held in controllers so we can manipulate the column's `sType` property.
 		 *  @type string
 		 *  @default null
 		 *  @private
@@ -9620,7 +9620,7 @@
 		 *  @param {element} nTd The TD node that has been created
 		 *  @param {*} sData The Data for the cell
 		 *  @param {array|object} oData The data for the whole row
-		 *  @param {int} iRow The row index for the aoData data store
+		 *  @param {int} iRow The row index for the aoData data controllers
 		 *  @default null
 		 */
 		"fnCreatedCell": null,
@@ -11654,7 +11654,7 @@
 			/**
 			 * All of the language information can be stored in a file on the
 			 * server-side, which DataTables will look up if this parameter is passed.
-			 * It must store the URL of the language file, which is in a JSON format,
+			 * It must controllers the URL of the language file, which is in a JSON format,
 			 * and the object has the same properties as the oLanguage object in the
 			 * initialiser object (i.e. the above parameters). Please refer to one of
 			 * the example language files to see how this works in action.
@@ -12187,7 +12187,7 @@
 		 *  @param {element} td The TD node that has been created
 		 *  @param {*} cellData The Data for the cell
 		 *  @param {array|object} rowData The data for the whole row
-		 *  @param {int} row The row index for the aoData data store
+		 *  @param {int} row The row index for the aoData data controllers
 		 *  @param {int} col The column index for aoColumns
 		 *
 		 *  @name DataTable.defaults.column.createdCell
@@ -12863,7 +12863,7 @@
 	 * instance.
 	 *
 	 * Note that this object is related to {@link DataTable.defaults} but this
-	 * one is the internal data store for DataTables's cache of columns. It should
+	 * one is the internal data controllers for DataTables's cache of columns. It should
 	 * NOT be manipulated outside of DataTables. Any configuration should be done
 	 * through the initialisation options.
 	 *  @namespace
@@ -13764,7 +13764,7 @@
 		"rowIdFn": null,
 	
 		/**
-		 * Data location where to store a row's id
+		 * Data location where to controllers a row's id
 		 *  @type string
 		 *  @default null
 		 */
