@@ -4,14 +4,12 @@ from retail.models import Asset, Category, Product
 
 
 class AssetSerializer(serializers.ModelSerializer):
-    """ Serializer to represent the Chain model """
     class Meta:
         model = Asset
         fields = ("id", "product", "image_url")
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    """ Serializer to represent the Employee model """
     assets = AssetSerializer(many=True)
 
     class Meta:
@@ -20,7 +18,6 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    """ Serializer to represent the Store model """
     products = ProductSerializer(many=True)
 
     class Meta:

@@ -56,12 +56,12 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('description', models.CharField(max_length=1000)),
                 ('price', models.FloatField()),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='retail.Category')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='controllers.Category')),
             ],
         ),
         migrations.AddField(
             model_name='asset',
             name='product',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='retail.Product'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='controllers.Product'),
         ),
     ]
