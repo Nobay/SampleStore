@@ -1,8 +1,8 @@
 'use strict';
 
-var retail = angular.module("retail", []);
+var retail = angular.module("retail", ['ngResource']);
 
-angular.module('SampleStoreApp', [
-        'app.routes',
-        'retail'
+angular.module('app', [
+        'retail',
+        'app.routes'
     ]);
