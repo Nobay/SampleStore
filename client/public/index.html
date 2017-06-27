@@ -33,27 +33,7 @@
 
 <body>
 
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-../../../static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">My Store</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <!-- /.navbar-top-links -->
-
-            <sidebar_menu>
-                <sidebar_menu_item item_title="Home" item_link="home" item_class="fa fa-home fa-fw"></sidebar_menu_item>
-                <sidebar_menu_item item_title="Products" item_link="categories" item_class="fa fa-shopping-bag fa-fw"></sidebar_menu_item>
-            </sidebar_menu>
-            <!-- /.navbar-../../../static-side -->
-        </nav>
-
-        <!-- Page Content -->
-        <content></content>
-        <!-- /#page-wrapper -->
+    <div ui-view="globalContent">
 
     </div>
     <!-- /#wrapper -->
@@ -79,15 +59,19 @@
     <!-- Controllers -->
     <script src="controllers/category.controller.js"></script>
     <script src="controllers/home.controller.js"></script>
+    <script src="controllers/login.controller.js"></script>
 
     <!--  Services -->
     <script src="services/category.service.js"></script>
     <script src="services/product.service.js"></script>
     <script src="services/asset.service.js"></script>
+    <script src="services/user.service.js"></script>
+    <script src="services/token.service.js"></script>
 
     <!--  Directives -->
-    <script src="directives/content.directive.js"></script>
     <script src="directives/sidebar_menu.directive.js"></script>
+    <script src="directives/content.directive.js"></script>
+    <script src="directives/form.directive.js"></script>
 
 </body>
 

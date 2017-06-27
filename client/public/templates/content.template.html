@@ -1,12 +1,30 @@
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12" ui-view="">
-
-            </div>
-            <!-- /.col-lg-12 -->
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-../../../static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">My Store</a>
         </div>
-        <!-- /.row -->
+        <!-- /.navbar-header -->
+
+        <!-- /.navbar-top-links -->
+
+        <sidebar_menu>
+            <sidebar_menu_item item_title="Home" item_link="home-content" item_class="fa fa-home fa-fw"></sidebar_menu_item>
+            <sidebar_menu_item item_title="Categories" item_link="categories" item_class="fa fa-shopping-bag fa-fw"></sidebar_menu_item>
+            <sidebar_menu_item item_title="Login" item_link="login" item_class="fa fa-login-bag fa-fw"></sidebar_menu_item>
+        </sidebar_menu>
+        <!-- /.navbar-../../../static-side -->
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12" ui-view="homeContent">
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
     </div>
-    <!-- /.container-fluid -->
 </div>

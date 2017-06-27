@@ -16,6 +16,6 @@ retail.directive('sidebarMenuItem',function(){
                 class:'@itemClass'
             },
             replace: true,
-            template : '<li><a ui-sref="{{link}}" ui-sref-active="active"><i class="{{class}}"></i> {{title}}</a></li>'
+            template : '<li><a ui-sref="{{link}}" ><i class="{{class}}"></i> {{title}}</a></li>'
         }
     });

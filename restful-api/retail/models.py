@@ -43,11 +43,17 @@ class Asset(models.Model):
 
 class Customer(User):
     """ Location employee model.  Foreign key to Store."""
-    address = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=12)
+    address = models.CharField(max_length=100, blank=True)
+    phone_number = models.CharField(max_length=12, blank=True)
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
+
+
+@receiver(post_save, sender=Customer)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
