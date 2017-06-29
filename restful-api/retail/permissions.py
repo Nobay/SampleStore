@@ -7,7 +7,7 @@ class UserPermission(permissions.BasePermission):
         if view.action == 'list':
             return request.user.is_authenticated() and request.user.is_superuser
         elif view.action == 'create':
-            return True
+            return request.user.is_superuser or (not request.user.is_authenticated)
         elif view.action in ['retrieve', 'update', 'partial_update', 'destroy']:
             return True
         else:

@@ -14,9 +14,9 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 router = DefaultRouter()
-router.register(prefix='categories', viewset=CategoryViewSet)
-router.register(prefix='assets', viewset=AssetViewSet)
-router.register(prefix='products', viewset=ProductViewSet)
-router.register(prefix='users', viewset=UserViewSet)
-router.register(prefix='customers', viewset=CustomerViewSet)
+router.register(prefix='categories', viewset=CategoryViewSet, base_name="my_categories")
+router.register(prefix='assets', viewset=AssetViewSet, base_name="my_assets")
+router.register(prefix='products', viewset=ProductViewSet, base_name="my_products")
+router.register(prefix='users', viewset=UserViewSet, base_name="my_users")
+router.register(prefix='customers', viewset=CustomerViewSet, base_name="my_customers")
 urlpatterns += router.urls

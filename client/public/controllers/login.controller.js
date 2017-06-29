@@ -12,7 +12,7 @@ retail
 
         $scope.login = function(){
             if($scope.user.username !== "" && $scope.user.password !== "")
-            {
+            {   
                 console.log("helloooooo");
                 Token.save({username: $scope.user.username, password: $scope.user.password}).$promise.then(function(data){
                     localStorage.setItem("user_token",data.token);
