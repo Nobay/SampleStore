@@ -10,13 +10,13 @@ retail
             "password":""
         };
 
-        $scope.register = function(){
+        $scope.login = function(){
             if($scope.user.username !== "" && $scope.user.password !== "")
             {
                 console.log("helloooooo");
                 Token.save({username: $scope.user.username, password: $scope.user.password}).$promise.then(function(data){
                     localStorage.setItem("user_token",data.token);
-                    console.log(localStorage.getItem("user_token"));
+                    localStorage.setItem("username",$scope.user.username);
                     $state.go('home-content');
                 })
             }

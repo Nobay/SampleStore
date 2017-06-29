@@ -3,13 +3,9 @@
  */
 retail
     .controller('HomeController', function($scope, $state, Category) {
-        console.log(localStorage.getItem("user_token"))
         if(localStorage.getItem("user_token") === "")
         {
-            $state.go('login');
+            localStorage.setItem("username","visitor");
         }
-        else
-        {
-
-        }
+        $scope.username = localStorage.getItem("username");
     });

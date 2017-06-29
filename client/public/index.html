@@ -33,7 +33,7 @@
 
 <body>
 
-    <div ui-view="globalContent">
+    <div ui-view="globalContent" style="height:100%; width:100%">
 
     </div>
     <!-- /#wrapper -->
@@ -60,18 +60,23 @@
     <script src="controllers/category.controller.js"></script>
     <script src="controllers/home.controller.js"></script>
     <script src="controllers/login.controller.js"></script>
+    <script src="controllers/logout.controller.js"></script>
+    <script src="controllers/navigation.controller.js"></script>
+    <script src="controllers/register.controller.js"></script>
 
     <!--  Services -->
     <script src="services/category.service.js"></script>
     <script src="services/product.service.js"></script>
     <script src="services/asset.service.js"></script>
-    <script src="services/user.service.js"></script>
+    <script src="services/customer.service.js"></script>
     <script src="services/token.service.js"></script>
 
     <!--  Directives -->
     <script src="directives/sidebar_menu.directive.js"></script>
     <script src="directives/content.directive.js"></script>
     <script src="directives/form.directive.js"></script>
+    <script src="directives/numbers_only.directive.js"></script>
+    <script src="directives/compare_to.directive.js"></script>
 
 </body>
 

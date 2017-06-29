@@ -7,6 +7,7 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 
 from retail.models import Asset, Category, Product, Customer
+from retail.permissions import UserPermission, ItemPermission
 from retail.serializers import AssetSerializer, CategorySerializer, ProductSerializer, UserSerializer, \
     CustomerSerializer
 from rest_framework.authtoken.models import Token
@@ -38,7 +39,7 @@ class AssetViewSet(UpdateModelMixin, viewsets.ModelViewSet):
     queryset = Asset.objects.all()
     serializer_class = AssetSerializer
     permission_classes = [
-        permissions.IsAuthenticated
+        ItemPermission
     ]
 
     def get_serializer(self, *args, **kwargs):
@@ -55,7 +56,7 @@ class CategoryViewSet(UpdateModelMixin, viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [
-        permissions.IsAuthenticated
+        ItemPermission
     ]
 
     def get_serializer(self, *args, **kwargs):
@@ -72,7 +73,7 @@ class ProductViewSet(UpdateModelMixin, viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [
-        permissions.IsAuthenticated
+        ItemPermission
     ]
 
     def get_serializer(self, *args, **kwargs):
@@ -99,24 +100,10 @@ def get_auth_token(request):
     return redirect(settings.LOGIN_URL, request)
 
 
-class CreateUserView(CreateAPIView):
-    queryset = User.objects.all()
-    model = get_user_model()
-    permission_classes = [
-        permissions.AllowAny     # Or anon users can't register
-    ]
-    serializer_class = UserSerializer
-
-
-class CreateCustomerView(CreateUserView):
-    queryset = Customer.objects.all()
-    serializer_class = CustomerSerializer
-
-
 class UserViewSet(UpdateModelMixin, viewsets.ModelViewSet):
     queryset = User.objects.all()
     permission_classes = [
-        permissions.IsAdminUser     # Only super user
+        UserPermission     # Only super user
     ]
     serializer_class = UserSerializer
 

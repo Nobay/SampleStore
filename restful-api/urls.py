@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
-from retail.views import CategoryViewSet, AssetViewSet, ProductViewSet, get_auth_token, CreateUserView, UserViewSet, \
-    CustomerViewSet, CreateCustomerView
+from retail.views import CategoryViewSet, AssetViewSet, ProductViewSet, get_auth_token, UserViewSet, \
+    CustomerViewSet
 from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
@@ -11,8 +11,6 @@ urlpatterns = [
     # Session Login
     url(r'^login/$', get_auth_token, name='login'),
     url(r'^get_auth_token/$', rest_framework_views.obtain_auth_token, name='get_auth_token'),
-    url(r'^users/add/$', CreateUserView.as_view(), name='create_user'),
-    url(r'^customers/add/$', CreateCustomerView.as_view(), name='create_customer'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 router = DefaultRouter()

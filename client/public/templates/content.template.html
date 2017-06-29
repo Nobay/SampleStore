@@ -1,8 +1,29 @@
 <div id="wrapper">
-    <nav class="navbar navbar-default navbar-../../../static-top" role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">My Store</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home-content">Sample Store</a>
         </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li ng-show="logged">
+                <a ui-sref="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            </li>
+            <li ng-show="logged">
+                <a ui-sref="#"><i class="fa fa-user fa-fw"></i> Profile</a>
+            </li>
+            <li ng-show="!logged">
+                <a ui-sref="login"><i class="fa fa-sign-in fa-fw"></i> Sign-in</a>
+            </li>
+            <li ng-show="!logged">
+                <a ui-sref="register"><i class="fa fa-user-plus fa-fw"></i> Sign-up</a>
+            </li>
+            <!-- /.dropdown -->
+        </ul>
         <!-- /.navbar-header -->
 
         <!-- /.navbar-top-links -->
@@ -10,7 +31,6 @@
         <sidebar_menu>
             <sidebar_menu_item item_title="Home" item_link="home-content" item_class="fa fa-home fa-fw"></sidebar_menu_item>
             <sidebar_menu_item item_title="Categories" item_link="categories" item_class="fa fa-shopping-bag fa-fw"></sidebar_menu_item>
-            <sidebar_menu_item item_title="Login" item_link="login" item_class="fa fa-login-bag fa-fw"></sidebar_menu_item>
         </sidebar_menu>
         <!-- /.navbar-../../../static-side -->
     </nav>

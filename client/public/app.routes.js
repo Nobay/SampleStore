@@ -4,20 +4,25 @@ angular.module('app.routes',["ui.router"])
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
-        .state('register', {
-            url: '/register',
-            templateUrl: '/templates/register.template.html',
-            controller: 'CategoryController'
-        })
-
         .state('authentication', {
             abstract: true,
             views:{
                 'globalContent': {
                     template: '<form-content></form-content>'
-                },
+                }
             }
          })
+
+        .state('register', {
+            parent: 'authentication',
+            url: '/register',
+            views:{
+                'formContent': {
+                    templateUrl: '/templates/register.template.html',
+                    controller: 'RegisterController'
+                }
+            }
+        })
 
         .state('login', {
             parent: 'authentication',
@@ -25,7 +30,17 @@ angular.module('app.routes',["ui.router"])
             views:{
                 'formContent': {
                     templateUrl: '/templates/login.template.html',
-                    controller: 'LoginController',
+                    controller: 'LoginController'
+                }
+            }
+        })
+
+        .state('logout', {
+            parent: 'authentication',
+            url: '/logout',
+            views:{
+                'formContent': {
+                    controller: 'LogoutController'
                 }
             }
         })
@@ -35,6 +50,7 @@ angular.module('app.routes',["ui.router"])
             views:{
                 'globalContent': {
                     template: '<content></content>',
+                    controller: 'NavigationController'
                 }
             }
         })
@@ -44,7 +60,7 @@ angular.module('app.routes',["ui.router"])
             views:{
                 'homeContent': {
                     templateUrl: '/templates/home.template.html',
-                    controller: 'HomeController',
+                    controller: 'HomeController'
                 }
             }
         })
@@ -55,7 +71,7 @@ angular.module('app.routes',["ui.router"])
             views:{
                 'homeContent': {
                     templateUrl: '/templates/categories.template.html',
-                    controller: 'CategoryController',
+                    controller: 'CategoryController'
                 }
             }
 
